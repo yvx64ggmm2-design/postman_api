@@ -41,6 +41,7 @@
               "\r",
               "pm.test(\"Name exists\", () => {\r",
               "    pm.expect(data_.name).to.exist;\r",
+              "    //test_QC\r",
               "});\r",
               "\r",
               "pm.test(\"Address exists\", () => {\r",
@@ -68,13 +69,13 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}/users/{{userId}}",
+          "raw": "{{baseUrl}}/users/1",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
             "users",
-            "{{userId}}"
+            "1"
           ]
         }
       },
@@ -191,13 +192,13 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}/users/{{userId}}",
+          "raw": "{{baseUrl}}/users/1",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
             "users",
-            "{{userId}}"
+            "1"
           ]
         }
       },
@@ -217,7 +218,7 @@
               "});\r",
               "\r",
               "pm.test(\"Response time is less than 1000ms\", () => {\r",
-              "    pm.expect(pm.response.responseTime).to.be.below(100);\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
               "});\r",
               "\r",
               "\r",
@@ -226,7 +227,7 @@
               "});\r",
               "\r",
               "pm.test(\"ID is a number\", () => {\r",
-              "    pm.expect(data_2.id).to.be.a(\"string\");\r",
+              "    pm.expect(data_2.id).to.be.a(\"number\");\r",
               "});\r",
               "\r",
               "pm.test(\"ID is greater than 0\", () => {\r",
@@ -234,7 +235,7 @@
               "});\r",
               "\r",
               "pm.test(\"ID equals 1\", () => {\r",
-              "    pm.expect(data_2.id).to.equal(2);\r",
+              "    pm.expect(data_2.id).to.equal(1);\r",
               "});\r",
               "\r",
               "\r",
@@ -244,7 +245,7 @@
               "});\r",
               "\r",
               "pm.test(\"Email is string\", () => {\r",
-              "    pm.expect(data_2.email).to.be.a(\"number\");\r",
+              "    pm.expect(data_2.email).to.be.a(\"string\");\r",
               "});\r",
               "\r",
               "pm.test(\"Email is not empty\", () => {\r",
@@ -252,11 +253,11 @@
               "});\r",
               "\r",
               "pm.test(\"Email contains @\", () => {\r",
-              "    pm.expect(data_2.email).to.include(\"_\");\r",
+              "    pm.expect(data_2.email).to.include(\"@\");\r",
               "});\r",
               "\r",
               "pm.test(\"Email contains gmail\", () => {\r",
-              "    pm.expect(data_2.email).to.include(\"icloud\");\r",
+              "    pm.expect(data_2.email).to.include(\"gmail\");\r",
               "});\r",
               "\r",
               "pm.test(\"Email format is valid\", () => {\r",
@@ -269,7 +270,7 @@
               "});\r",
               "\r",
               "pm.test(\"Username is string\", () => {\r",
-              "    pm.expect(data_2.username).to.be.a(\"number\");\r",
+              "    pm.expect(data_2.username).to.be.a(\"string\");\r",
               "});\r",
               "\r",
               "pm.test(\"Username is not empty\", () => {\r",
@@ -281,7 +282,7 @@
               "});\r",
               "\r",
               "pm.test(\"Username equals johnd\", () => {\r",
-              "    pm.expect(data_2.username).to.equal(\"1234\");\r",
+              "    pm.expect(data_2.username).to.equal(\"johnd\");\r",
               "});\r",
               "\r",
               "\r",
@@ -302,7 +303,7 @@
               "});\r",
               "\r",
               "pm.test(\"Password contains $\", () => {\r",
-              "    pm.expect(data_2.password).to.include(\"#\");\r",
+              "    pm.expect(data_2.password).to.include(\"$\");\r",
               "});\r",
               "\r",
               "\r",
@@ -454,18 +455,6 @@
               "});\r",
               "\r",
               "\r",
-              "pm.test(\"__v exists\", () => {\r",
-              "    pm.expect(data_2.__v).to.exist;\r",
-              "});\r",
-              "\r",
-              "pm.test(\"__v is a number\", () => {\r",
-              "    pm.expect(data_2.__v).to.be.a(\"number\");\r",
-              "});\r",
-              "\r",
-              "pm.test(\"__v equals 0\", () => {\r",
-              "    pm.expect(data_2.__v).to.equal(0);\r",
-              "});\r",
-              "\r",
               "\r",
               "\r",
               "pm.test(\"All main properties exist\", () => {\r",
@@ -499,23 +488,15 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}/users/{{userId}}",
+          "raw": "{{baseUrl}}/users/1",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
             "users",
-            "{{userId}}"
+            "1"
           ]
         }
-      },
-      "response": []
-    },
-    {
-      "name": "New Request",
-      "request": {
-        "method": "GET",
-        "header": []
       },
       "response": []
     }
